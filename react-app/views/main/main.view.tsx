@@ -40,12 +40,20 @@ export class MainView extends React.Component<{}, IMainViewState> {
     })
   }
 
+  private reloadButton () {
+    return (
+      <p>
+        <a href='#' onClick={() => this.requestDolartodayData()}>Reload</a>
+      </p>
+    )
+  }
+
   private renderError () {
     const { error } = this.state
     return (
       <div>
         <p><b>An error has occurred:</b> {error}</p>
-        <p><a href='#' onClick={() => this.requestDolartodayData()}>Try again</a></p>
+        {this.reloadButton()}
       </div>
     )
   }
@@ -60,6 +68,7 @@ export class MainView extends React.Component<{}, IMainViewState> {
     }
     return (
       <div>
+        {this.reloadButton()}
         <DolartodayComponent data={data} />
       </div>
     )
