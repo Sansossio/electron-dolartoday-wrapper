@@ -26,13 +26,13 @@ export class MainView extends React.Component<{}, IMainViewState> {
   }
 
   private requestDolartodayData () {
-    this.setState({ loading: true })
+    this.setState({ loading: true, error: null })
     ipcRenderer.send(dolarTodayEvents.DOLARTODAY_DATA)
   }
 
   private bindDolartodayEvents () {
     ipcRenderer.on(dolarTodayEvents.DOLARTODAY_DATA, (_, data) => {
-      this.setState({ data, loading: false, error: null })
+      this.setState({ data, loading: false })
     })
 
     ipcRenderer.on(dolarTodayEvents.DOLARTODAY_DATA_ERROR, (_, error) => {
