@@ -1,6 +1,6 @@
 {
   "name": "electron-dolartoday-wrapper",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Dolartoday api wrapper. This is a simple electron app example",
   "main": "app/index.js",
   "homepage": "./",
@@ -68,6 +68,9 @@
     ]
   },
   "build": {
+    "publish": {
+      "provider": "github"
+    },
     "files": [
       "app/**/*",
       "build/**/*",
