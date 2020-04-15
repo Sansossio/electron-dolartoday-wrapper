@@ -1,6 +1,6 @@
-# Electron + typescript + react
-
-Basic boilerplate
+# Dolartoday wrapper
+A simple electron example, all the information showed are from dolartoday api.
+We are not responsible for the information shown
 
 ## Start
 First we need to start react
@@ -8,11 +8,6 @@ First we need to start react
 
 And then, start electron
 ```npm run start:electron```
-
-## Env
-```env
-ELECTRON_DISABLE_SECURITY_WARNINGS=1 // Disable security electron warnings (chrome dev console)
-```
 
 ## Screenshots
 ![Main window](./screenshots/example.png)
