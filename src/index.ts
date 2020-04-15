@@ -4,6 +4,8 @@ import { baseUrl } from './url/base-url'
 
 dotenv.config()
 
+const APP_TITLE = 'Dolartoday - Loading'
+
 app.on('ready', () => {
   const main = new BrowserWindow({
     webPreferences: {
@@ -11,5 +13,6 @@ app.on('ready', () => {
     }
   })
   main.loadURL(baseUrl())
+  main.setTitle(APP_TITLE)
   main.webContents.openDevTools()
 })
