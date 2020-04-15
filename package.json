@@ -6,11 +6,9 @@
   "homepage": "./",
   "scripts": {
     "test": "jest",
-    "build": "npm run build:react && npm run build:electron",
-    "build:local": "rm -Rf dist && npm run build:react && npm run build:electron:local",
+    "build": "rm -Rf dist && npm run build:react && npm run build:electron",
     "build:tsc": "tsc",
-    "build:electron": "npm run build:tsc && electron-builder --publish always",
-    "build:electron:local": "rm -Rf app && npm run build:tsc && electron-builder",
+    "build:electron": "rm -Rf app && npm run build:tsc && electron-builder",
     "build:react": "rm -Rf build && webpack --mode production",
     "start:electron": "electron src/main.js",
     "start:react": "webpack-dev-server  --mode development --inline --hot",
@@ -70,9 +68,6 @@
     ]
   },
   "build": {
-    "publish": {
-      "provider": "github"
-    },
     "files": [
       "app/**/*",
       "build/**/*",
