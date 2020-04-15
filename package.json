@@ -9,8 +9,9 @@
     "build:tsc": "tsc",
     "build:electron": "rm -Rf app && npm run build:tsc && electron-builder",
     "build:react": "rm -Rf build && webpack --mode production",
-    "start:electron": "electron app/index.js",
+    "start:electron": "electron src/main.js",
     "start:react": "webpack-dev-server  --mode development --inline --hot",
+    "start": "concurrently \"npm run start:react\" \"wait-on http://localhost:3000 && npm run start:electron\"",
     "lint": "standard",
     "lint:fix": "standard --fix"
   },
@@ -36,6 +37,7 @@
     "@babel/preset-env": "^7.9.5",
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.1.0",
+    "concurrently": "^5.1.0",
     "cross-env": "^7.0.2",
     "electron": "^8.2.1",
     "electron-builder": "^22.4.1",
@@ -47,6 +49,7 @@
     "tslint": "^6.1.1",
     "tslint-config-standard": "^9.0.0",
     "typescript": "^3.8.3",
+    "wait-on": "^4.0.2",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
