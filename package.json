@@ -1,0 +1,70 @@
+{
+  "name": "electron-typescript-react",
+  "version": "0.0.1",
+  "description": "Electron + typescript + react boilerplate",
+  "main": "app/index.js",
+  "homepage": "./",
+  "scripts": {
+    "build": "rm -Rf dist && npm run build:react && npm run build:electron",
+    "build:tsc": "tsc",
+    "build:electron": "rm -Rf app && npm run build:tsc && electron-builder",
+    "build:react": "rm -Rf build && webpack --mode production",
+    "start:electron": "electron app/index.js",
+    "start:react": "webpack-dev-server  --mode development --inline --hot",
+    "lint": "standard",
+    "lint:fix": "standard --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sansossio/electron-typescript-react.git"
+  },
+  "author": "Julio Sansossio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sansossio/electron-typescript-react/issues"
+  },
+  "dependencies": {
+    "electron-is-dev": "^1.2.0",
+    "dotenv": "^8.2.0",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/polyfill": "^7.8.7",
+    "@babel/preset-env": "^7.9.5",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.1.0",
+    "cross-env": "^7.0.2",
+    "electron": "^8.2.1",
+    "electron-better-ipc": "^1.0.0",
+    "electron-builder": "^22.4.1",
+    "html-webpack-plugin": "^4.2.0",
+    "jest": "^25.3.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "standard": "^14.3.3",
+    "ts-node": "^8.8.2",
+    "tslint": "^6.1.1",
+    "tslint-config-standard": "^9.0.0",
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  },
+  "build": {
+    "files": [
+      "app/**/*",
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  }
+}
