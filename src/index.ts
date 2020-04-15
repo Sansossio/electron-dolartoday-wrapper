@@ -1,6 +1,8 @@
 import { BrowserWindow, app } from 'electron'
+import * as isDev from 'electron-is-dev'
 import * as dotenv from 'dotenv'
 import { baseUrl } from './url/base-url'
+import { initIpc } from './ipc'
 
 dotenv.config()
 
@@ -14,5 +16,8 @@ app.on('ready', () => {
   })
   main.loadURL(baseUrl())
   main.setTitle(APP_TITLE)
-  main.webContents.openDevTools()
+  if (isDev) {
+    main.webContents.openDevTools()
+  }
+  initIpc()
 })
