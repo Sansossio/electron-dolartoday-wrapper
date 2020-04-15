@@ -13,11 +13,9 @@ export class DolartodayComponent extends React.Component<IDolarTodayProps, {}> {
         eurDollarRate
       }
     } = this.props
-    const date = dateFormat(timestamp)
-    const minutesDiff = minutesAgo(timestamp)
     return (
       <div>
-        <p><b>Date:</b> {date} ({minutesDiff} minutes ago)</p>
+        <p><b>Date:</b> {dateFormat(timestamp)} ({minutesAgo(timestamp)} minutes ago)</p>
       </div>
     )
   }
