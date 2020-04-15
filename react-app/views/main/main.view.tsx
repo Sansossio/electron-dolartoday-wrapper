@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { LoadingComponent } from '../../components/loading/loading.component'
 import { IMainViewState } from './main.view.state'
+import { DolartodayComponent } from '../../components/dolar-today/dolar-today.component'
 
 const { ipcRenderer } = window.require('electron')
 
@@ -59,7 +60,7 @@ export class MainView extends React.Component<{}, IMainViewState> {
     }
     return (
       <div>
-        <p>{JSON.stringify(data)}</p>
+        <DolartodayComponent data={data} />
       </div>
     )
   }
