@@ -6,7 +6,7 @@ const path = require('path')
 const basePath = __dirname
 
 module.exports = {
-  context: path.join(basePath, 'react'),
+  context: path.join(basePath, 'react-app'),
   resolve: {
     extensions: ['.js', '.ts', '.tsx']
   },
