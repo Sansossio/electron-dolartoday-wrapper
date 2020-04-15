@@ -1,7 +1,7 @@
 {
-  "name": "electron-typescript-react",
+  "name": "electron-dolartoday-wrapper",
   "version": "0.0.1",
-  "description": "Electron + typescript + react boilerplate",
+  "description": "Dolartoday api wrapper. This is a simple electron app example",
   "main": "app/index.js",
   "homepage": "./",
   "scripts": {
@@ -16,12 +16,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Sansossio/electron-typescript-react.git"
+    "url": "git+https://github.com/Sansossio/electron-dolartoday-wrapper.git"
   },
   "author": "Julio Sansossio",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Sansossio/electron-typescript-react/issues"
+    "url": "https://github.com/Sansossio/electron-dolartoday-wrapper/issues"
   },
   "dependencies": {
     "electron-is-dev": "^1.2.0",
