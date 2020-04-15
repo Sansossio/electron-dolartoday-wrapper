@@ -1,6 +1,6 @@
 {
   "name": "electron-dolartoday-wrapper",
-  "version": "0.0.4",
+  "version": "0.0.2",
   "description": "Dolartoday api wrapper. This is a simple electron app example",
   "main": "app/index.js",
   "homepage": "./",
@@ -8,7 +8,7 @@
     "test": "jest",
     "build": "rm -Rf dist && npm run build:react && npm run build:electron",
     "build:tsc": "tsc",
-    "build:electron": "rm -Rf app && npm run build:tsc && electron-builder --publish onTag",
+    "build:electron": "rm -Rf app && npm run build:tsc && electron-builder --publish always",
     "build:react": "rm -Rf build && webpack --mode production",
     "start:electron": "electron src/main.js",
     "start:react": "webpack-dev-server  --mode development --inline --hot",
