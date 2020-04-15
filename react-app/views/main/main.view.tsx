@@ -32,7 +32,7 @@ export class MainView extends React.Component<{}, IMainViewState> {
 
   private bindDolartodayEvents () {
     ipcRenderer.on(dolarTodayEvents.DOLARTODAY_DATA, (_, data) => {
-      this.setState({ data, loading: false })
+      this.setState({ data, loading: false, error: null })
     })
 
     ipcRenderer.on(dolarTodayEvents.DOLARTODAY_DATA_ERROR, (_, error) => {
