@@ -28,7 +28,7 @@ export function dolarTodayMapper (data: any): DolarTodayDto {
     eur: extractConcurrency(data.EUR),
     bcv: {
       timestamp: new Date(+data.BCV.fecha),
-      usd: data.BCV.reservas
+      usd: parseNumber(data.BCV.reservas)
     },
     eurDollarRate: parseNumber(data.EURUSD.rate)
   }
