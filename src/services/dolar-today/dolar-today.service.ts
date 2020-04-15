@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { DolarTodayDto } from './dto/dolar-today.dto'
-import { DolarTodayMapper } from './mapper/dolar-today.mapper'
+import { dolarTodayMapper } from './mapper/dolar-today.mapper'
 
 const DATA_URL = 'https://s3.amazonaws.com/dolartoday/data.json'
 
@@ -10,6 +10,6 @@ export class DolarTodayService {
       url: DATA_URL,
       method: 'GET'
     })
-    return DolarTodayMapper(data)
+    return dolarTodayMapper(data)
   }
 }

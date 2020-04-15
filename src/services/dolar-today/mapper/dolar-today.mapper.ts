@@ -15,9 +15,15 @@ function extractConcurrency (data: any): DolarTodayCurrency {
   }
 }
 
-export function DolarTodayMapper (data: any): DolarTodayDto {
+function parseDate (epoch: number) {
+  const date = new Date(0)
+  date.setUTCSeconds(epoch)
+  return date
+}
+
+export function dolarTodayMapper (data: any): DolarTodayDto {
   return {
-    timestamp: new Date(+data._timestamp.epoch),
+    timestamp: parseDate(+data._timestamp.epoch),
     usd: extractConcurrency(data.USD),
     eur: extractConcurrency(data.EUR),
     bcv: {
