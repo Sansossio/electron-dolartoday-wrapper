@@ -16,6 +16,7 @@ app.on('ready', () => {
   })
   main.loadURL(baseUrl())
   main.setTitle(APP_TITLE)
+  main.removeMenu()
   if (isDev) {
     main.webContents.openDevTools()
   }
