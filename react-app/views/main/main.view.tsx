@@ -69,7 +69,9 @@ export class MainView extends React.Component<{}, IMainViewState> {
             </p>
           )}
         </HeaderComponent>
-        {this.renderData()}
+        <div id='body'>
+          {this.renderData()}
+        </div>
       </>
     )
   }
