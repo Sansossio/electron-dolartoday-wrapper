@@ -52,10 +52,7 @@ export class MainView extends React.Component<{}, IMainViewState> {
         </div>
       )
     }
-    if (loading) {
-      return <LoadingComponent/>
-    }
-    return <DolartodayComponent data={data} />
+    return loading ? <LoadingComponent/> : <DolartodayComponent data={data} />
   }
 
   render () {
