@@ -5,6 +5,7 @@ import { DolartodayComponent } from '../../components/dolar-today/dolar-today.co
 
 import './main.view.scss'
 import { HeaderComponent } from '../../components/header/header'
+import { FooterComponent } from '../../components/footer/footer.component'
 
 const { ipcRenderer } = window.require('electron')
 
@@ -69,6 +70,7 @@ export class MainView extends React.Component<{}, IMainViewState> {
         <div id='body'>
           {this.renderData()}
         </div>
+        <FooterComponent/>
       </>
     )
   }
