@@ -1,0 +1,14 @@
+.currency {
+  display: inline-block;
+  width: calc(50% - 22px);
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid #ACAFAC;
+  #title {
+    font-size: 15px;
+    font-weight: bold;
+  }
+  p {
+    margin: 0;
+  }
+}

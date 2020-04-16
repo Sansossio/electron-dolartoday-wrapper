@@ -17,6 +17,7 @@ app.on('ready', () => {
   main.loadURL(baseUrl())
   main.setTitle(APP_TITLE)
   main.removeMenu()
+  main.setMaximizable(false)
   if (isDev) {
     main.webContents.openDevTools()
   }

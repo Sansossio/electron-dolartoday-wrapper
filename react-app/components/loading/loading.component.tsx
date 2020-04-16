@@ -2,6 +2,6 @@ import * as React from 'react'
 
 export function LoadingComponent () {
   return (
-    <h1>Loading...</h1>
+    <h3>Loading...</h3>
   )
 }
