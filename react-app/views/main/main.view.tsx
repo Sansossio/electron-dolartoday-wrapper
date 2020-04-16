@@ -3,6 +3,9 @@ import { LoadingComponent } from '../../components/loading/loading.component'
 import { IMainViewState } from './main.view.state'
 import { DolartodayComponent } from '../../components/dolar-today/dolar-today.component'
 
+import './main.view.scss'
+import { HeaderComponent } from '../../components/header/header'
+
 const { ipcRenderer } = window.require('electron')
 
 const dolarTodayEvents = {
@@ -40,37 +43,34 @@ export class MainView extends React.Component<{}, IMainViewState> {
     })
   }
 
-  private reloadButton () {
-    return (
-      <p>
-        <a href='#' onClick={() => this.requestDolartodayData()}>Reload</a>
-      </p>
-    )
-  }
-
-  private renderError () {
-    const { error } = this.state
-    return (
-      <div>
-        <p><b>An error has occurred:</b> {error}</p>
-        {this.reloadButton()}
-      </div>
-    )
-  }
-
-  render () {
-    const { loading, data, error } = this.state
+  private renderData () {
+    const { error, loading, data } = this.state
     if (error) {
-      return this.renderError()
+      return (
+        <div>
+          <p><b>An error has occurred:</b> {error}</p>
+        </div>
+      )
     }
     if (loading) {
       return <LoadingComponent/>
     }
+    return <DolartodayComponent data={data} />
+  }
+
+  render () {
+    const { loading } = this.state
     return (
-      <div>
-        {this.reloadButton()}
-        <DolartodayComponent data={data} />
-      </div>
+      <>
+        <HeaderComponent>
+          {!loading && (
+            <p>
+              <button onClick={() => this.requestDolartodayData()}>Reload</button>
+            </p>
+          )}
+        </HeaderComponent>
+        {this.renderData()}
+      </>
     )
   }
 }
